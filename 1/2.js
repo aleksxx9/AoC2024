@@ -30,13 +30,20 @@ fetch('https://adventofcode.com/2024/day/1/input', {
       rightList.push(lists[1]);
     })
 
-    leftList = leftList.sort((a, b) => a - b);
-    rightList = rightList.sort((a, b) => a - b);
-
     let answer = 0;
 
-    leftList.forEach((num, index) => {
-      answer += Math.abs(leftList[index] - rightList[index]);
+    const listLength = leftList.length;
+    const mockArr = Array(listLength).fill();
+
+    leftList.forEach((num) => {
+      let count = 0;
+      mockArr.forEach((und, index) => {
+        if (rightList[index] === num) {
+          count++;
+        }
+      })
+
+      answer += num * count;
     })
 
     console.log(answer)
