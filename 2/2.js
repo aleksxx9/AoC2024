@@ -188,6 +188,7 @@ fetch('https://adventofcode.com/2024/day/2/input', {
         safeCount++
       }
     })
+    // 689
     console.log(safeCount)
   });
 
