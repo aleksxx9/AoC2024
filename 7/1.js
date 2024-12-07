@@ -29,7 +29,7 @@ fetch('https://adventofcode.com/2024/day/7/input', {
       equations[total] = val;
     })
 
-    function canBeTrue(total, values) {
+    const canBeTrue = (total, values) => {
       if (values.length === 1) {
         if (total === values[0])
           return true;
